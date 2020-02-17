@@ -1,4 +1,4 @@
-const recipes = {
+export const recipes = {
     cakes: [{
         type: "cakes",
         author: "John Smith",
