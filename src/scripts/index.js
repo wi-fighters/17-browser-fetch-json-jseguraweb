@@ -14,8 +14,8 @@ const breadSection = document.querySelector('#bread');
 const card = document.createElement('div');
 card.classList.add('card');
 // picture
-const pictureContainer = document.createElement('div');
-pictureContainer.classList.add('card-img');
+const picture = document.createElement('img');
+picture.classList.add('card-img');
 // info
 const infoContainer = document.createElement('div');
 infoContainer.classList.add('card-info');
@@ -33,7 +33,7 @@ infoContainer.appendChild(title);
 infoContainer.appendChild(author);
 infoContainer.appendChild(ingredients);
 // append picture and info containers in the card
-card.appendChild(pictureContainer);
+card.appendChild(picture);
 card.appendChild(infoContainer);
 // cakesSection.appendChild(card)
 
@@ -54,5 +54,28 @@ promiseOfRecipes.then(recipes => {
         let card = document.createElement('div');
         card.classList.add('card');
         cakesSection.appendChild(card);
+        // picture
+        let picture = document.createElement('img');
+        picture.classList.add('card-img');
+        picture.setAttribute('src', cake.image)
+        // info
+        const infoContainer = document.createElement('div');
+        infoContainer.classList.add('card-info');
+        // title of the card
+        const title = document.createElement('h3');
+        title.appendChild(document.createTextNode(cake.title));
+        // author
+        const author = document.createElement('p');
+        author.appendChild(document.createTextNode(cake.author));
+        // ingredients
+        const ingredients = document.createElement('p');
+        ingredients.appendChild(document.createTextNode(`Ingredients: ${cake.ingredients}`));
+        // append parts of the info in it
+        infoContainer.appendChild(title);
+        infoContainer.appendChild(author);
+        infoContainer.appendChild(ingredients);
+
+        card.appendChild(picture);
+        card.appendChild(infoContainer);
     })
 })
