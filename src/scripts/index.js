@@ -1,7 +1,7 @@
 // The following line makes sure your styles are included in the project. Don't remove this.
 import '../styles/main.scss';
 // Import any additional modules you want to include below \/
-import { recipes } from './data.js';
+import { convertedData } from './data.js';
 
 // \/ All of your javascript should go here \/
 
@@ -12,11 +12,11 @@ const breadSection = document.querySelector('#bread');
 
 // CREATE PROGRAM
 let promiseOfRecipes = new Promise((resolve, reject) => {
-    resolve(recipes)
+    resolve(convertedData);
 })
 
 promiseOfRecipes.then(recipes => {
-    let listOfRecipes = JSON.parse(JSON.stringify(recipes));
+    let listOfRecipes = JSON.parse(recipes);
     // console.log(listOfRecipes);
     return listOfRecipes;
 })
